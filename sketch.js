@@ -11,5 +11,6 @@ function draw() {
 	background(51);
 	for(var i = 0; i < stars.length; i++){
 		 stars[i].show();
+		 stars[i].moveThroughSpace();
 	}
 }
