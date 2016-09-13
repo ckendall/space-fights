@@ -31,7 +31,7 @@ function Spaceship() {
 		}
 
 		this.x = constrain(this.x, this.size, width - this.size)
-		this.y = constrain(this.y, this.size, height + this.size)
+		this.y = constrain(this.y, this.size + this.size, height)
 	}
 
 }
