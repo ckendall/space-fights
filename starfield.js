@@ -16,4 +16,5 @@ function Star() {
 			this.x = random(width)
 		}
 	}
+
 }
