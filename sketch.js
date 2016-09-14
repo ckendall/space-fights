@@ -1,13 +1,13 @@
 var stars = [];
 var bullets = [];
-var spaceship, bullet; 
+var spaceship, enemy, bullet; 
 
 function setup(){
 	createCanvas(600, 500);
 	for(var i = 0; i < 400; i++){
 		 stars[i] = new Star
 	}
-
+	enemy = new Enemy
 	spaceship = new Spaceship
 }
 
@@ -18,20 +18,21 @@ function draw() {
 		 stars[i].moveThroughSpace();
 	}
 
-	for(var i = 0; i < bullets.length; i++){
+	for(var i = 0; i < bullets.length; i++){	
 		bullets[i].show();
 		bullets[i].move();
-		
+		bullets[i].update();
 	}
 
-	if(frameCount % 20 === 0){
-		var bullet = new Bullet(spaceship.x, spaceship.y - spaceship.size)
+	if(frameCount % 30 === 0){
+		bullet = new Bullet(spaceship.x, spaceship.y - spaceship.size)
 		bullets.push(bullet);
 		
 	}
-
+	
 	spaceship.draw();
 	spaceship.update();
+	enemy.draw();
 
 }
 

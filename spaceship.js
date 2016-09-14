@@ -3,7 +3,8 @@ function Spaceship() {
 	this.y = height;
 	this.xSpeed = 3;
 	this.ySpeed = 3;
-	this.size = 20
+	this.size = 20;
+	this.upgrage = 0;
 
 	this.draw = function() {
 		fill(102, 102, 255)

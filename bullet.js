@@ -9,6 +9,15 @@ function Bullet(x, y){
 		ellipse(this.x, this.y, this.size, this.size);
 	}
 
+
+	this.update = function() {
+		for(var i = bullets.length - 1; i >= 0; i--){
+			if(bullets[i].y < 0){
+				bullets.splice(i, 1)
+			}
+		}
+	}
+
 	this.move = function() {
 		this.y -= this.bulletSpeed;
 	}
