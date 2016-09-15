@@ -5,10 +5,11 @@ function Spaceship() {
 	this.ySpeed = 3;
 	this.size = 20;
 	this.upgrage = 0;
+	this.bullet;
 
 	this.draw = function() {
 		fill(102, 102, 255)
-		ellipse(this.x, this.y - this.size , this.size, this.size)
+		ellipse(this.x + (this.size/2), this.y - (this.size/2) , this.size, this.size)
 	}
 
 	this.update = function() {
@@ -33,6 +34,11 @@ function Spaceship() {
 
 		this.x = constrain(this.x, this.size, width - this.size)
 		this.y = constrain(this.y, this.size + this.size, height)
+
+		if(frameCount % 40 === 0){
+			this.bullet = new Bullet(this.x + this.size/2, this.y - this.size/2, "player")
+			bullets.push(this.bullet);
+		}
 	}
 
 }
